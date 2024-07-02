@@ -30,8 +30,8 @@ jobs:
     #      args: -d hello --greeting Hola --name Jeremy
     #      cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
     steps:
+      - uses: actions/checkout@v4
       - name: Local
         uses: dagger/dagger-for-github@v5
         with:
-          module: "../../" 
           args: container-echo --string-arg "Hello, Dagger!" stdout
