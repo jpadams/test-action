@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,5 +23,5 @@ jobs:
       - name: Local
         uses: dagger/dagger-for-github@v5
         with:
-          module: "github.com/${GITHUB_REPOSITORY}@main"
+          module: github.com/jpadams/test-action@main
           args: container-echo --string-arg "Hello, Dagger!" stdout
