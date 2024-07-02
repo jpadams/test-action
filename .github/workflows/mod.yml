@@ -25,5 +25,5 @@ jobs:
       - name: Local
         uses: dagger/dagger-for-github@v5
         with:
-          module: github.com/${GITHUB_REPOSITORY}@main
+          module: "github.com/${GITHUB_REPOSITORY}@main"
           args: container-echo --string-arg "Hello, Dagger!" stdout
