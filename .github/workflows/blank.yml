@@ -21,11 +21,16 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+    #steps:
+    #  - name: Hello
+    #    uses: dagger/dagger-for-github@v5
+    #    with:
+    #      verb: call 
+    #      module: github.com/shykes/daggerverse/hello
+    #      args: -d hello --greeting Hola --name Jeremy
+    #      cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
     steps:
-      - name: Hello
+      - name: Local
         uses: dagger/dagger-for-github@v5
         with:
-          verb: call 
-          module: github.com/shykes/daggerverse/hello
-          args: -d hello --greeting Hola --name Jeremy
-          cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
+          args: container-echo --string-arg "Hello, Dagger!" stdout
